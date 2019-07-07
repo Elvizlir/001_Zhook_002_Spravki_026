@@ -98,6 +98,19 @@
 		font-size: 50px;
 		margin-right: rem(20);
 	}
+	.map-wrap{
+		margin-top: rem(20);
+		height: rem(380);
+		width: 100%;
+		position: relative;
+		> ymaps{
+			position: absolute;
+			height: 100% !important;
+			width: 100% !important;
+			top: 0;
+			left: 0;
+		}
+	}
 	//	
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

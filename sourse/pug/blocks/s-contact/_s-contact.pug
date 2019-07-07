@@ -3,7 +3,7 @@ mixin s-contact()
 	+b.s-contact.section.block-with-lazy#s-contact&attributes(attributes)
 		.container
 			.row
-				+e.contact-col.col-12.col-md.d-flex.d-md-block.align-items-center
+				+e.contact-col.col-md-6.col-lg
 					+e.col-title Контакты
 					.block
 						+e.item
@@ -20,9 +20,7 @@ mixin s-contact()
 							+icon("placeholder")
 							+e.item-main
 								+e.text г. Москва, ул. Новый арбат, 3, оф. 215
-				+e.map-col.col-12.col-md.order-xl-last
-					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A728c1c9f9f83f5aeb21a5dc67356b816f13c0d81911ac8b425fabe1128cf1511&amp;width=380&amp;height=380&amp;lang=ru_RU&amp;scroll=false"></script>
-				+e.form-col.col-12.col-xl-auto
+				+e.form-col.col-md-6.col-lg-auto
 					+e.col-title Задать вопрос
 					+e.form
 						+form-wrap
@@ -31,6 +29,9 @@ mixin s-contact()
 							+ta("Введите вопрос","")
 							.btn-form
 								+b.BUTTON.btn-main(type="submit") Задать вопрос
+				+e.map-col.col-lg
+					.map-wrap
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A728c1c9f9f83f5aeb21a5dc67356b816f13c0d81911ac8b425fabe1128cf1511&amp;width=380&amp;height=380&amp;lang=ru_RU&amp;scroll=false"></script>
 			+e.page-up-block
 				+e.A.page-up.scroll-link(href="#header-block")
 					+e.page-up-text В начало

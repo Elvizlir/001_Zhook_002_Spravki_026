@@ -44,7 +44,6 @@
  	width: 43%;
 	 height: 100%;
 	 @include media-breakpoint-down(lg) {
-		width: 100%;
 		display: flex;
 		justify-content: flex-end;
 		padding-right: rem(40);

@@ -1,14 +1,18 @@
 .top-nav {
-	background-color: rgba(60, 126, 161, 0.8);
+	background-color: rgba(60, 126, 161, 0.9);
 	position: fixed;
-	width: 100%;
+	width: 100vw;
 	left: 0;
 	top: 0;
+	padding-right: calc(100vw - 100%); 
 	a{
 		color: #FFF;
 		text-decoration: none;
 	}
 	padding: rem(15) rem(20);
+	@include media-breakpoint-down(sm) {
+		padding: rem(7) rem(20);
+	}
 	// position: absolute;
 	top: 100%;
 	// @include clearfix;ss

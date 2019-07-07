@@ -16,6 +16,9 @@
 			 &:hover{
 				background: #5A8BB3
 			 }
+			 @include media-breakpoint-down(sm) {
+				padding: rem(10) rem(10) rem(10) rem(50);
+			 }
 		 }
 		 &__header-text{
 			 font-size: rem(20);
@@ -32,12 +35,18 @@
 					position: absolute;
 					top: rem(3);
 					left: rem(-50);
+					@include media-breakpoint-down(sm) {
+						left: rem(-40);
+					 }
 			 }
 		 }
 		 .accordeon-body{
 			 display: none;
 			 margin-top: rem(2);
 			 padding: rem(20) rem(30) rem(30) rem(80);
+			 @include media-breakpoint-down(sm) {
+				padding: rem(20) rem(15) rem(30) rem(30);
+			 }
 		 }
 		 &__body-text{
 			 font-weight: 300;
@@ -54,6 +63,9 @@
 				position: absolute;
 				top: 0;
 				left: rem(-50);
+				@include media-breakpoint-down(sm) {
+					content: none;	
+				}
 		 	}
 		 }
 		 .active{

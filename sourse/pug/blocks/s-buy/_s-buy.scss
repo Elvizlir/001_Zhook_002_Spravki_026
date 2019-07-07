@@ -5,8 +5,11 @@
 		padding: rem(40) 0
 		 !important;
 	 }
+	 &__item-p{
+		 margin-bottom: rem(40);
+	 }
 	&__item{
-		margin-top: rem(80);
+		margin-bottom: rem(80);
 	}
 	&__item-image{
 		max-width: rem(277);

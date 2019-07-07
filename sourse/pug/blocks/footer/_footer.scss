@@ -39,6 +39,9 @@
   }
   &__phone-col{
     text-align: right;
+    @include media-breakpoint-down(xs) {
+      text-align: left;
+    }
   }
   &__phone-block{
     font-size: rem(22);

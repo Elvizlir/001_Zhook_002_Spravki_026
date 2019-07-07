@@ -1,5 +1,32 @@
 .s-about-company {
-		 
+	@include media-breakpoint-up(md) {
+		padding: rem(70) 0 rem(70);
+	}
+	@include media-breakpoint-down(md) {
+		padding: rem(35) 0 rem(35);
+	}
+	&__article-img{
+		width: 100%;
+		max-width: rem(301);
+		height: auto;
+		float: left;
+		margin-right: rem(20);
+	}
+	&__strong-text{
+		font-weight: 700;
+	}
+	.autor{
+		margin-top: rem(50);
+		@include media-breakpoint-down(md) {
+			margin-top: rem(25);
+		}
+	}
+	h2{
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem(25);
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

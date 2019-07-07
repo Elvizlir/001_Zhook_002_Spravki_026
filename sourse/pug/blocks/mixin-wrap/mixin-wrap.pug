@@ -67,17 +67,21 @@ mixin soc()
 //- 			li.menu-item: a(href="#")= linkName
 
 mixin mnu()
-	- var nav= {"Главная ":"#","Статьи  ":"01-articles.html","Вопрос-ответ   ":"10-faq.html","Отзывы ":"#"," О компании  ":"#"," Контакты ":"#"}
+	//- - var nav= {"Главная ":"#","Статьи  ":"01-articles.html","Вопрос-ответ   ":"10-faq.html","Отзывы ":"#"," О компании  ":"#"," Контакты ":"#"}
 	+e.UL.nav
-		each linkPatch, linkName in nav
-			+e.LI.item: +e.A.link(href= linkPatch)= linkName
+			+e.LI.item: +e.A.link(href="/") Главная
+			+e.LI.item: +e.A.link(href="01-articles.html") Статьи
+			+e.LI.item: +e.A.link(href="10-faq.html") Вопрос-ответ
+			+e.LI.item: +e.A.link.scroll-link(href="#s-reviews") Отзывы
+			+e.LI.item: +e.A.link(href="11-about-company.html") О компании
+			+e.LI.item: +e.A.link(href="12-contacts.html") Контакты
 
 
 mixin sticky-block()
 	// start sticky-block
-	+b.container-with-sticky
+	+b.container-with-sticky.d-none.d-xl-block
 		+e.sticky-block&attributes(attributes)
-			+e.toggle-block--js.d-block.d-xl-none 
+			+e.toggle-block--js.d-none.d-xl-none 
 				img( class="res-i" src="img/deliver-city-3.png", alt="")
 
 			+e.main-block
@@ -90,6 +94,6 @@ mixin sticky-block()
 						+input("tel","Мобильный телефон для связи")
 						+ta("Дополнительные данные (сделанные прививки, рост, вес, и др.)")
 						.btn-slide
-							+b.BUTTON.btn-main(type="sumbit") Оформить заявку
+							+b.BUTTON.btn-main(type="submit") Оформить заявку
 					+e.A.link(href="#") Перечень необходимых данных
 	// end sticky-block
