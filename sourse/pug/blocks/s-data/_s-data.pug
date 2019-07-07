@@ -1,0 +1,27 @@
+mixin s-data()
+	// start s-data
+	+b.SECTION.s-data.section.block-with-lazy#s-data&attributes(attributes)
+		.container
+			.main-block
+				+e.H2.title.block-title Данные, которые необходимо заполнить в форме:
+				.row
+					.col-auto
+						+e.UL.list.atricle-text
+							+e.LI.item ФИО ребенка;
+							+e.LI.item Дата рождения ребенка;
+							+e.LI.item Учебное заведение, куда поступает ребенок;
+							+e.LI.item Адрес по прописке / регистрации;
+							+e.LI.item Рост, вес ребенка;
+							+e.LI.item Серия, номер мед. страхового полиса ОМС;
+							+e.LI.item Какие сделаны прививки (дата, доза, название);
+							+e.LI.item Чем болел ребенок ранее;
+					.col
+						+e.UL.list.atricle-text
+							+e.LI.item ФИО отца;
+							+e.LI.item ФИО матери;
+							+e.LI.item Дата рождения отца;
+							+e.LI.item Дата рождения матери;
+							+e.LI.item Образование родителей (среднее, высшее, и т.д.);
+							+e.LI.item Контактный телефон для связи;
+							+e.LI.item Место доставки.
+	// end s-data

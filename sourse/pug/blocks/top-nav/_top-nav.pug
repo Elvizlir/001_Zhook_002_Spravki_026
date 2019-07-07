@@ -1,0 +1,33 @@
+
+mixin mob-mnu()
+	
+	+b.menu-mobile--js.d-xl-none
+		+b.toggle-menu-mobile--js
+			span
+		+e.inner
+		
+			+mnu()
+			.text-right
+	//  мобильное меню
+mixin top-nav() 
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		.container
+			.row
+				+e.logo-block.col-auto
+					//- +e.IMG.logo-image(src="img/header-logo.png" alt="#")
+					+e.logo-title
+						a(href="#") spravki-026.com
+					+e.logo-subtitle
+						a(href="#") Детская справка 026/у-2000
+				.col.align-self-center.d-none.d-xl-block
+					+mnu()
+				+e.phone-col.col.col-xl-auto.d-none.d-md-block
+					+e.A.phone-block(href="tel:+7(495)108-74-55")
+						+e.phone-first +7 (495)
+						+e.phone-second 108-74-55
+					+e.work-time с 09:00 до 22:00 по Мск
+				+e.col-menu.col.col-md-auto.d-xl-none.d-flex.align-items-center.justify-content-end
+					+b.toggle-menu-mobile--js.d-xl-none
+							span
+	// end top-nav

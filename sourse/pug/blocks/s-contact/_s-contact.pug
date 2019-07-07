@@ -1,0 +1,37 @@
+mixin s-contact()
+	// start s-contact
+	+b.s-contact.section.block-with-lazy#s-contact&attributes(attributes)
+		.container
+			.row
+				+e.contact-col.col-12.col-md.d-flex.d-md-block.align-items-center
+					+e.col-title Контакты
+					.block
+						+e.item
+							+e.IMG.item-image(src="img/svg/call.svg" alt="#")
+							+e.item-main
+								+e.A.phone(href="tel:+7(495)108-74-55") +7 (495) 108-74-55
+								+e.text Время работы с 09:00 - 22:00 по МСК
+						+e.item
+							+e.IMG.item-image(src="img/svg/mail.svg" alt="#")
+							+e.item-main
+								+e.A.mail(href="mailto:mail@spravki-026.com") mail@spravki-026.com
+
+						+e.item
+							+e.IMG.item-image(src="img/svg/placeholder.svg" alt="#")
+							+e.item-main
+								+e.text г. Москва, ул. Новый арбат, 3, оф. 215
+				+e.map-col.col-12.col-md.order-xl-last
+					<a class="map-image" href="https://yandex.ru/maps/?um=constructor%3A728c1c9f9f83f5aeb21a5dc67356b816f13c0d81911ac8b425fabe1128cf1511&amp;source=constructorStatic" target="_blank"><img src="https://api-maps.yandex.ru/services/constructor/1.0/static/?um=constructor%3A728c1c9f9f83f5aeb21a5dc67356b816f13c0d81911ac8b425fabe1128cf1511&amp;width=380&amp;height=380&amp;lang=ru_RU" alt="" style="border: 0;" /></a>
+				+e.form-col.col-12.col-xl-auto
+					+e.col-title Задать вопрос
+					+e.form
+						+form-wrap
+							+input("","Введите Ваше имя")
+							+input("","Введите номер телефона")
+							+ta("Введите вопрос","")
+					+e.btn
+						+b.btn-main(href="#") Задать вопрос
+			+e.A.page-up(href="#")
+				+e.page-up-text В начало
+				+e.IMG.page-up-image(src="img/page-up.png" alt="#")
+	// end s-contact

@@ -1,0 +1,31 @@
+mixin header-block()
+	// start header-block
+	+b.header-block#header-block(style="background-image: url(../img/header-bg.jpg);")
+		+e.container.container
+			+e.IMG.bg-photo.d-none.d-xl-block(src="img/header-bg-photo.png" alt="#")
+			.row
+				+e.col-doc.col-12.col-lg-4.col-xl
+					+e.IMG.doc-photo(src="img/blank.jpg" alt="#")
+				.col
+					+e.H1.title Медицинская справка ребенка, форма №026/у-2000
+					+e.subtitle для школы, школы-интерната, детского дома, детского сада, яслей/сада в Москве
+					+e.main-text Получите в течение 24 часов без посещения поликлиники официальный документ, заполненный действующим педиатром в соответствии с Вашими требованиями, указанными в заявке.
+					.row
+						.col-auto
+							+b.price-block.d-none.d-md-flex
+								+e.text Стоимость
+								+e.price 5 000
+								+e.text рублей
+						+e.col-btn.col
+							+b.btn-main(href="#") Заказать справку
+
+	// end header-block
+
+
+mixin header-block-2(b, t)
+	// start header-block
+	+b.header-block#header-block-2(style=b)
+		+e.container.container
+					+e.H1.title=t
+
+	// end header-block

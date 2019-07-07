@@ -1,0 +1,18 @@
+mixin footer()
+	+b.FOOTER.footer.block-with-lazy
+		.container
+			.row
+				.col-auto.d-none.d-sm-block
+					+e.A.logo-block(href="#")
+						+e.title SPRAVKI-026.COM
+						+e.subtitle Детская справка 026/у-2000
+				.col.d-none.d-lg-flex.justify-content-center
+					.block
+						+e.text Детская медицинская справка 026/у-2000 в Москве.
+						+e.IMG.counter(src="img/counter.gif" alt="#")
+				+e.phone-col.col.col-lg-auto
+					+e.A.phone-block(href="tel:+7(495)108-74-55")
+						+e.phone-first +7 (495) 
+						+e.phone-second 108-74-55
+					+e.work с 09:00 до 22:00 по МСК
+

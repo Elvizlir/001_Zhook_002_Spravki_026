@@ -1,0 +1,20 @@
+mixin s-order-now()
+	// start s-order-now
+	+b.s-order-now.section.block-with-lazy#s-order-now&attributes(attributes)
+		.container
+			.main-block
+				+e.main-text Теперь не&nbsp;нужно сидеть с&nbsp;ребенком в&nbsp;очередях у&nbsp;кабинетов различных специалистов и&nbsp;доказывать свои права на&nbsp;добровольность профилактических осмотров и&nbsp;прививок.
+				+e.main-text Однократное получение важного документа не&nbsp;раз пригодится вам в&nbsp;будущем. В&nbsp;справке будут отражены все необходимые медицинские сведения для поступления ребенка в&nbsp;любой детский коллектив.
+				+e.price-block.row
+					+e.text-col.col-auto
+						+e.main-text.subtext Заполните заявку прямо на сайте или позвоните по указанному номеру и необходимый документ будет у Вас на руках в течение суток.
+					.col-auto
+						+b.price-block.d-none.d-md-flex
+							+e.text Стоимость
+							+e.price 5 000
+							+e.text рублей
+				+e.A.phone-block(href="tel:+7(495)108-74-55")
+						+e.phone-first +7 (495) 
+						+e.phone-second 108-74-55
+				+e.addition Обращаем внимание на то, что, если у ребенка проблемы со здоровьем, лучше обратиться в поликлинику.
+	// end s-order-now

@@ -1,0 +1,54 @@
+.s-buy {
+	padding: rem(80) 0
+	 !important;
+	 @include media-breakpoint-down(md) {
+		padding: rem(40) 0
+		 !important;
+	 }
+	&__title{
+		font-weight: 700;
+		margin-bottom: rem(40);
+		color: #2C3035;
+		line-height: 56px;
+	}
+	&__item{
+		margin-top: rem(80);
+	}
+	&__item-image{
+		max-width: rem(277);
+		width: 100%;
+		height: auto;
+		float: left;
+		margin-right: rem(20);
+		@include media-breakpoint-down(md) {
+			float: none;
+			max-width: none;
+			margin-bottom: rem(20);
+		}
+	}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+}
