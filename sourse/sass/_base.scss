@@ -158,7 +158,7 @@ body {
 	max-width: rem(690);
 }
 
-.block-title{
+h2{
 	font-weight: 700;
 	margin-bottom: rem(50);
 	color: #2C3035;
@@ -168,17 +168,21 @@ body {
 	}
 }
 
-.article-title{
+h3{
 	margin-bottom: rem(20);
 	color: #2A2A2A;
 	font-weight: 700;
 	line-height: rem(36);
 }
 
-.article-text{
+p{
 	line-height: rem(26);
 	font-weight: 300;
 	color: #212529;
+}
+
+.about-company-list{
+	margin: rem(15) 0 rem(30) !important;
 }
 
 
@@ -484,7 +488,7 @@ img.lazy{
 	&__main-block{
 		position: relative;
 	}
-	&__main-title{
+	h1{
 		color: $primary;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -495,7 +499,7 @@ img.lazy{
 			line-height: rem(37);
 		}
 	}
-	&__title{
+	h3{
 		@include media-breakpoint-down(md) {
 			line-height: rem(30);
 		}
@@ -508,7 +512,7 @@ img.lazy{
 		height: auto;
 		margin-bottom: rem(55);
 	}
-	&__text{
+	p{
 		margin-top: rem(20);
 	}
 	&__item{
@@ -523,48 +527,48 @@ img.lazy{
 		right: 0;
 		z-index: -1;
 	}
-	&__list{
+	ul{
 		color: #212529;
 		font-weight: 300;
 		padding-left: rem(30);
 		margin-top: rem(-15);
 		list-style: none;
-	}
-	&__list-item{
-		position: relative;
-		margin-bottom: rem(5);
-		&::before{
-			content: "–";
-			position: absolute;
-			top: 0;
-			left: rem(-15);
-			font-weight: 300;
+		li{
+			position: relative;
+			margin-bottom: rem(5);
+			&::before{
+				content: "–";
+				position: absolute;
+				top: 0;
+				left: rem(-15);
+				font-weight: 300;
+			}
 		}
 	}
-	&__ordered-list{
+	.ordered-strong{
 		font-weight: 300;
 		list-style-type: none;
 		counter-reset: item;
-	}
-	&__ordered-list-item{
-		position: relative;
-		line-height: 1.6;
-		margin-bottom: rem(20);
-		span{
-			font-weight: 700;
-			font-size: rem(17);
+		li{
+			position: relative;
+			line-height: 1.6;
+			margin-bottom: rem(20);
+			strong{
+				font-weight: 700;
+				font-size: rem(17);
+			}
+			&::before {
+				content: counter(item) '.';
+				counter-increment: item;
+				position: absolute;
+				top: 0;
+				left: rem(-20);
+				font-weight: 700;
+				font-size: rem(17);
+			}
 		}
-		&::before {
-			content: counter(item) '.';
-			counter-increment: item;
-			position: absolute;
-			top: 0;
-			left: rem(-20);
-			font-weight: 700;
-			font-size: rem(17);
-		}
 	}
-	.light-list{
+	li{
 		&::before{
 			font-weight: 300 ;
 			top: rem(-1);
@@ -577,3 +581,4 @@ img.lazy{
 		display: inline;
 	}
 }
+

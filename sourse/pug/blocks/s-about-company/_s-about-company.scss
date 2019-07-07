@@ -1,32 +1,4 @@
-.s-articles {
-	padding: rem(77) 0 !important;
-	&__item{
-		margin-bottom: rem(60);
-	}
-	&__item-image{
-		width: 100%;
-		max-width: rem(277);
-		height: auto;
-		float: left;
-		margin-right: rem(20);
-		margin-bottom: 0;
-		@include media-breakpoint-down(sm) {
-			float: none;
-			max-width: none;
-			margin-bottom: rem(15);
-		}
-	}
-	p{
-		margin-bottom: rem(20);
-	}
-	&__text{
-		display: inline;
-	}
-	&__autor{
-		@include media-breakpoint-down(xs) {
-			font-size: rem(14);
-		}
-	}
+.s-about-company {
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

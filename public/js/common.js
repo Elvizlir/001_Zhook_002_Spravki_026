@@ -81,11 +81,11 @@ jQuery(document).ready(function ($) {
 	heightses();
  
 	// листалка по стр
-	$(" .top-nav, .scroll-link").click(function () {
+	$(".scroll-link").click(function () {
 	       var elementClick = $(this).attr("href");
 	       var destination = $(elementClick).offset().top;
 
-	           $('html, body').animate({ scrollTop: destination }, 1100);
+	           $('html, body').animate({ scrollTop: destination }, 1500);
 
 	       return false;
 	   }); 
@@ -443,11 +443,23 @@ $(document).ready(function() {
 });
 
 function f_acc(){
-	//$('#accordeon .ac-body').slideUp(1000);
 	$('.accordeon-body').not($(this).next()).slideUp(500);
 	$(this).next().slideDown(500);
 	$('.accordeon-head').not($(this)).removeClass('active');
 	$(this).addClass('active');
 	$('.accordeon-body').removeClass('active-body');
-	// $(this).next().addClass('active-body');
+}
+
+
+$(document).ready(function() {
+	$('.container-with-sticky__toggle-block--js').on('click', toggle_sticky_form);
+});
+
+function toggle_sticky_form(){
+	$('.container-with-sticky__sticky-block').toggleClass('active');
+	$(this).toggleClass('active');
+	// $(this).next().slideDown(500);
+	// $('.accordeon-head').not($(this)).removeClass('active');
+	// $(this).addClass('active');
+	// $('.accordeon-body').removeClass('active-body');
 }

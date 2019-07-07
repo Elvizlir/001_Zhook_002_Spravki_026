@@ -44,6 +44,9 @@
     font-size: rem(22);
     color: #fff;
     letter-spacing: 1px;
+    &:hover{
+      color: #fff;
+    }
   }
   &__phone-second{
     font-weight: 700;

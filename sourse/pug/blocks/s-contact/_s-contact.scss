@@ -53,10 +53,13 @@
 			height: rem(138);
 		}
 	}
+	&__page-up-block{
+		text-align: right;
+	}
 	&__page-up{
 		margin-top: rem(20);
-		display: flex;
-		justify-content: flex-end;
+		display: inline-flex;
+		// justify-content: flex-end;
 		align-items: center;
 		&:hover{
 			text-decoration: none;
@@ -89,6 +92,11 @@
 		@include media-breakpoint-down(lg) {
 			justify-content: center;
 		}
+	}
+	.icon{
+		color: $primary;
+		font-size: 50px;
+		margin-right: rem(20);
 	}
 	//	
 	@include media-breakpoint-up(xl) {}

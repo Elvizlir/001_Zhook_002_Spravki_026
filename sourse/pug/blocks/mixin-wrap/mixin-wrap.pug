@@ -75,8 +75,11 @@ mixin mnu()
 
 mixin sticky-block()
 	// start sticky-block
-	+b.container-with-sticky.d-none.d-xl-block
+	+b.container-with-sticky
 		+e.sticky-block&attributes(attributes)
+			+e.toggle-block--js.d-block.d-xl-none 
+				img( class="res-i" src="img/deliver-city-3.png", alt="")
+
 			+e.main-block
 				+e.form-block
 					+e.title Оформить заявку на справку 026/у
@@ -84,9 +87,9 @@ mixin sticky-block()
 						+input("","ФИО ребёнка")
 						+input("","Дата рождения ребёнка")
 						+input("","Адрес места жительства")
-						+input("","Мобильный телефон для связи")
+						+input("tel","Мобильный телефон для связи")
 						+ta("Дополнительные данные (сделанные прививки, рост, вес, и др.)")
-					+e.btn
-						+b.btn-main(href="#") Оформить заявку
+						.btn-slide
+							+b.BUTTON.btn-main(type="sumbit") Оформить заявку
 					+e.A.link(href="#") Перечень необходимых данных
 	// end sticky-block

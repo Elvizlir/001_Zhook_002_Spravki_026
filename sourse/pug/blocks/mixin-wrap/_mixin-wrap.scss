@@ -42,11 +42,46 @@
  	top: 0;
  	right: 0;
  	width: 43%;
- 	height: 100%;
-
- 	&__sticky-block {
- 		margin: rem(20) 0 0 rem(20);
- 	}
+	 height: 100%;
+	 @include media-breakpoint-down(lg) {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		padding-right: rem(40);
+	 }
+	 
+	 &__toggle-block--js{
+		 @extend .btn;
+		 @extend .btn-secondary;
+		 position: absolute;
+		 right: 100%;
+		 cursor: pointer;
+		 max-width: rem(100);
+		 margin-right: rem(20);
+		 z-index: 999;
+		 @include media-breakpoint-down(xs) {
+			 bottom: 100%;
+			 margin-bottom: rem(10);
+			 &.active{
+				 left: 0;
+			}
+		 }
+		}
+		&__sticky-block {
+			@include mt;
+			@include media-breakpoint-up(xl) {
+			 transform: translateX(0) !important;
+			}
+		 //  @include media-breakpoint-down(sm) {
+				
+		 //  } 
+			transform: translateX(115%);
+		 margin: rem(20) 0 0 rem(20);
+			&.active{
+				transform: translateX(0);
+				z-index: 999;
+			}
+		}
 	 &__form-block{
 		 box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.07);
 		 border-style: solid;
@@ -63,6 +98,9 @@
 			position: relative;
 			max-width: rem(380);
 			z-index: 2;
+			@include media-breakpoint-down(lg) {
+				margin-left: 0;
+			 }
 			&::before{
 				content: "";
 				width: rem(446);
@@ -71,9 +109,12 @@
 				border-radius: 50%;
 				@include a-cent();
 				z-index: -1;
+				@include media-breakpoint-down(lg) {
+					content: none;
+				 }
 			}
 	 }
-	 &__btn{
+	 .btn-slide{
 		 text-align: center;
 		 .btn-main{
 			max-width: rem(235);
