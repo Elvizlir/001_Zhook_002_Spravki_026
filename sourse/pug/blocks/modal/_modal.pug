@@ -33,14 +33,14 @@ mixin modal()
 	//- 			br 
 
 	+form-wrap()(id="modal-call" class="zoom-anim-dialog mfp-hide modal-win modal-form" )
-		.text-center
-			+e.title.h3.ttu Обратный звонок
-			p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут
-		+input("text","Ваше Имя")(required) 
-		+input("tel","Ваш телефон")(required)
-		//- +input("email","Ваше email")(required)
-		//- +text( "Комментарий")
-		+e.INPUT.btn.btn.btn-block.btn-warning.mb-4(type="submit" value="Рассчитать") 
-		+polite()
+		+e.title Оформить заявку на справку 026/у
+		+input("","ФИО ребёнка")
+		+input("","Дата рождения ребёнка")
+		+input("","Адрес места жительства")
+		+input("tel","Мобильный телефон для связи")
+		+ta("Дополнительные данные (сделанные прививки, рост, вес, и др.)")
+		.btn-slide
+			+b.BUTTON.btn-main(type="submit") Оформить заявку
+		+e.A.link(href="#") Перечень необходимых данных
 	// #modal-call
 	// modal

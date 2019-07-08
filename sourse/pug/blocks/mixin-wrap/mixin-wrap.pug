@@ -97,3 +97,14 @@ mixin sticky-block()
 							+b.BUTTON.btn-main(type="submit") Оформить заявку
 					+e.A.link(href="#") Перечень необходимых данных
 	// end sticky-block
+
+
+mixin modal-btn()
+	// start sticky-block
+	+b.modal-btn.d-block.d-xl-none
+		+e.sticky-block&attributes(attributes)
+				+b.btn-main.popup-with-move-anim(href="#modal-call")
+					+e.IMG.modal-btn-img(src="img/deliver-city-3.png" alt="#")
+	// end sticky-block
+
+

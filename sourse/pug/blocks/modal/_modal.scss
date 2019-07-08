@@ -1,6 +1,46 @@
 .modal-win {
 	display: block;
 	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: rem(380);
+	background-color: #fff;
+	box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.07);
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DFDFDF;
+	padding: rem(20) rem(15);
+	z-index: 2;
+	margin-bottom: rem(30);
+	.form-wrap{
+		&__title{
+			color: $primary;
+			font-size: rem(26);
+			font-weight: 700;
+			text-align: center;
+			max-width: rem(250);
+			margin: 0 auto rem(20);
+		}
+		&__link{
+			text-align: center;
+			display: block;
+			width: 100%;
+			text-decoration: underline;
+			&:hover{
+				color: $primary;
+			}
+		}
+	 }
+	.btn-slide{
+		text-align: center;
+		.btn-main{
+		 max-width: rem(235);
+		 padding: rem(13) 0;
+		 margin-top: rem(10);
+		 margin-bottom: rem(15);
+		}
+	}
+	
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;
