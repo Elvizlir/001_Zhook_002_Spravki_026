@@ -3,40 +3,37 @@ var btnToggle = $(".toggle-menu-mobile--js"),
 		menu = $(".menu-mobile--js")
 
 jQuery(document).ready(function ($) {
-
+	// скрывает модальное окно
+	$(".form-wrap__link").click(function(){
+		$.magnificPopup.close()
+	});
+	// /скрывает модальное окно
 	// для свг
 	svg4everybody({}); 
 	JSCCommon.magnificPopupCall();
-
-	JSCCommon.tabscostume('tabs');
-
+ 
 	JSCCommon.mobileMenu();
 
-	JSCCommon.inputMask();
+	JSCCommon.inputMask(); 
 
-	JSCCommon.inlineSVG();
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>') 
 
-	JSCCommon.CustomInputFile();
-
-	JSCCommon.CustomYoutubeBlock();
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
-
-
-	
-	var url = document.location.href;
-	$.each($(".top-nav__nav a "), function () {
-
-		if (this.href == url) {
-			if ($(this).hasClass("top-nav__link") == true) {
-
-				$(this).addClass('top-nav__link-active');
-			}
-			if ($(this).hasClass("footer__link") == true) {
-
-				$(this).addClass('footer__link-active');
-			} 
-		}; 
+		// аккордеон
+		$('.accordeon-head').on('click',   function (){
+			$('.accordeon-body').not($(this).next()).slideUp(500);
+			$(this).next().slideDown(500);
+			$('.accordeon-head').not($(this)).removeClass('active');
+			$(this).addClass('active');
+			$('.accordeon-body').removeClass('active-body');
+		}); 
+	 // /
+		$('.container-with-sticky__toggle-block--js').on('click',  function  (){
+		$('.container-with-sticky__sticky-block').toggleClass('active');
+		$(this).toggleClass('active');
+		// $(this).next().slideDown(500);
+		// $('.accordeon-head').not($(this)).removeClass('active');
+		// $(this).addClass('active');
+		// $('.accordeon-body').removeClass('active-body');
 	}); 
 	// / закрыть меню при горизонтальном свайпе
 	// /закрыть/открыть мобильное меню
@@ -52,15 +49,9 @@ jQuery(document).ready(function ($) {
 
 		var topH = $("header ").innerHeight();
 
-		$(window).scroll(function () {
-			if ($(this).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
-			} else {
-				$('.top-nav  ').removeClass('fixed');
-			}
-		});
+ 
 		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
+		if (window.matchMedia("(min-width: 1200px)").matches) {
 
 			btnToggle.removeClass("on");
 			// $("body").removeClass("fixed");
@@ -82,18 +73,21 @@ jQuery(document).ready(function ($) {
  
 	// листалка по стр
 	$(".scroll-link").click(function () {
-	       var elementClick = $(this).attr("href");
-	       var destination = $(elementClick).offset().top;
+		var elementClick = $(this).attr("href");
+			elementClickmin = elementClick.replace('/',''); 
+				 if(elementClickmin){
+					//  elementClick = '/' + elementClick;
+					var destination = $(elementClickmin).offset().top;
+					// console.log(elementClick.replace( '/'));
 
-	           $('html, body').animate({ scrollTop: destination }, 1500);
-
-	       return false;
+					$('html, body').animate({ scrollTop: destination }, 1000);
+					
+					return false;
+				}
+				
+				// console.log(elementClick)
 	   }); 
-
-	// var icon = '<svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve" ><path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z" ></path>';
-
-	// var arrl2 = (' <div class="r">' + icon),
-	// 	arrr2 = (' <div class="l">' + icon);
+ 
 	// // карусель
 	$('.s-reviews__slider').slick({
 		// slidesToShow: 1,
@@ -120,7 +114,6 @@ jQuery(document).ready(function ($) {
 	});
 
 	$('.parallax-block').parallax({
-		imageSrc: '../img/s-price-bg.jpg',
 		speed: 0.7,
 	});
 
@@ -129,144 +122,12 @@ jQuery(document).ready(function ($) {
 		.on('lazyLoaded', function (event, slick, image, imageSource) {
 			image.parent().css('background-image', 'url(' + image.attr('src') + ')');
 		});
-	// slider
-	// var swiper4 = new Swiper('.color-slider', {
-	// 	// slidesPerView: 5,
-	// 	slidesPerView: 'auto',
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	freeMode: true,
-	// 	watchOverflow: true,
-	// 	slidesPerGroup: 3,
-
-	// 	// centeredSlides: true,
-	// 	loop: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
-
-	// });
-	// modal window
-
-
- 
- 
-	// или
-	// $(".dropzone").dropzone({
-	//  url: "/file/post",
-	//  addRemoveLinks: true,
-	//      acceptedFiles: 'image/*',
-	//      uploadMultiple: true,
-	//   });
-
-
-
-
-	// $(".wow-wrap").each(function () {
-	// var wowAnim = $(this).find(".s-dop__col," +
-	//                 ".s-pick__col," +
-	//                 ".s-condition__col");
-	// wowAnim.each(function(i){
-
-	// wowAnim.eq(i).attr("data-wow-delay", i*.1*2 + "s");
-
-	//    var wow = new WOW({ mobile: false });
-	//         wow.init();
-
-	// });
-	// });
-
+	 
 
 });
 JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
-	// функции для запуска lazy
-	LazyFunction: function() {
-	function lazyShow(lazyLoad) {
-			document.removeEventListener("scroll", lazyLoad);
-			window.removeEventListener("resize", lazyLoad);
-			window.removeEventListener("orientationchange", lazyLoad);
-			window.addEventListener("DOMContentLoaded", lazyLoad);
-		};
-		// Для лэзи загрузки 
-
-		document.addEventListener("DOMContentLoaded", function () {
-			var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-			var active = false;
-
-			const lazyLoad = function () {
-				if (active === false) {
-					active = true;
-
-					setTimeout(function () {
-						lazyImages.forEach(function (lazyImage) {
-							if (((lazyImage.getBoundingClientRect().top - lazyImage.closest(".block-with-lazy").clientHeight * 2) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
-								lazyImage.src = lazyImage.dataset.src;
-								// lazyImage.srcset = lazyImage.dataset.srcset;
-								lazyImage.classList.remove("lazy");
-
-								lazyImages = lazyImages.filter(function (image) {
-									return image !== lazyImage;
-								});
-
-								if (lazyImages.length === 0) {
-									lazyShow(lazyLoad)
-								}
-							}
-						});
-
-						active = false;
-					}, 200);
-				}
-			};
-
-			lazyShow(lazyLoad)
-		});
-
-
-		// лэзи 
-		document.addEventListener("DOMContentLoaded", function () {
-			var lazyImages = [].slice.call(document.querySelectorAll(".lazy-bg"));
-			var active = false;
-
-			const lazyLoad = function () {
-				if (active === false) {
-					active = true;
-
-					setTimeout(function () {
-						lazyImages.forEach(function (lazyImage) {
-							if (((lazyImage.getBoundingClientRect().top - lazyImage.closest(".block-with-lazy").clientHeight * 2) <= window.innerHeight && (lazyImage.getBoundingClientRect().bottom + lazyImage.closest(".block-with-lazy").clientHeight * 2) >= 0) && getComputedStyle(lazyImage).display !== "none") {
-								lazyImage.parentElement.style.backgroundImage = 'url(' + lazyImage.dataset.src + ')';
-								lazyImage.src = lazyImage.dataset.src;
-								// lazyImage.srcset = lazyImage.dataset.srcset;
-								lazyImage.classList.remove("lazy");
-
-								lazyImages = lazyImages.filter(function (image) {
-									return image !== lazyImage;
-								});
-
-								if (lazyImages.length === 0) {
-									lazyShow(lazyLoad)
-								}
-							}
-						});
-
-						active = false;
-					}, 200);
-				}
-			};
-
-			lazyShow(lazyLoad)
-		});
-
-	},
-
-	
+ 
 
 	// /LazyFunction
 
@@ -356,76 +217,7 @@ JSCCommon = {
 		});
 	},
 	// /mobileMenu
-
-	// табы  . 
-	tabscostume: function (tab) {
-		$('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-			$(this)
-				.addClass('active').siblings().removeClass('active')
-				.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-				.eq($(this).index()).fadeIn().addClass('active');
-
-		});
-	},
-	// /табы  . 
-
-
-
-	inlineSVG: function () {
-		//Replace all SVG images with inline SVG
-		$('img.img-svg').each(function () {
-			var $img = $(this);
-			var imgClass = $img.attr('class');
-			var imgURL = $img.attr('src');
-
-			$.get(imgURL, function (data) {
-				// Get the SVG tag, ignore the rest
-				var $svg = $(data).find('svg');
-
-				// Add replaced image's classes to the new SVG
-				if (typeof imgClass !== 'undefined') {
-					$svg = $svg.attr('class', imgClass + ' replaced-svg');
-				}
-
-				// Remove any invalid XML tags as per http://validator.w3.org
-				$svg = $svg.removeAttr('xmlns:a');
-
-				// Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-				if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-					$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-				}
-
-
-				// Replace image with new SVG
-				$img.replaceWith($svg);
-
-			}, 'xml');
-
-		});
-	},
-	// /nlineSVG
-	CustomInputFile: function CustomInputFile() {
-		var file = $(".add-file input[type=file]");
-		file.change(function () {
-			var filename = $(this).val().replace(/.*\\/, "");
-			var name = $(".add-file__filename  ");
-			name.text(filename);
-
-		});
-	},
-	// /CustomInputFile
-	CustomYoutubeBlock: function () {
-		$(".pretty-embed__bg").each(function () {
-			// загрузка фона видео
-			$(this).css("background-image", 'url(http://img.youtube.com/vi/' + $(this).data("src") + '/0.jpg)')
-			// включение видео при клике по блоку
-			$(this).click(function () {
-				$(this).removeClass("on").next()
-					.attr("src", 'https://www.youtube.com/embed/' + $(this).data("src") + '?autoplay=1').addClass("on");
-			})
-		})
-
-	},
+ 
 	// /CustomYoutubeBlock
 	inputMask: function () {
 		// mask for input
@@ -434,32 +226,5 @@ JSCCommon = {
 	// /inputMask
 
 };
+ 
 
-JSCCommon.LazyFunction();
-/***/
-
-$(document).ready(function() {
-	$('.accordeon-head').on('click', f_acc);
-});
-
-function f_acc(){
-	$('.accordeon-body').not($(this).next()).slideUp(500);
-	$(this).next().slideDown(500);
-	$('.accordeon-head').not($(this)).removeClass('active');
-	$(this).addClass('active');
-	$('.accordeon-body').removeClass('active-body');
-}
-
-
-$(document).ready(function() {
-	$('.container-with-sticky__toggle-block--js').on('click', toggle_sticky_form);
-});
-
-function toggle_sticky_form(){
-	$('.container-with-sticky__sticky-block').toggleClass('active');
-	$(this).toggleClass('active');
-	// $(this).next().slideDown(500);
-	// $('.accordeon-head').not($(this)).removeClass('active');
-	// $(this).addClass('active');
-	// $('.accordeon-body').removeClass('active-body');
-}

@@ -147,12 +147,19 @@
 
  .modal-btn{
 	 position: fixed;
-	 right: rem(20);
+	 right: 0;
 	 top: 45vh;
 	 z-index: 10;
+	 @include media-breakpoint-down(sm) {
+		 top: rem(120);
+	 }
 	 .btn-main{
 		 width: rem(80);
 		 padding: rem(15);
+		 @include media-breakpoint-down(sm) {
+			 padding: rem(10);
+			 width: rem(60);
+		 }
 		 &__modal-btn-img{
 			 width: 100%;
 			 max-width: rem(64);
