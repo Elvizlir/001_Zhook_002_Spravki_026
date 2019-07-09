@@ -153,7 +153,11 @@
 	 @include media-breakpoint-down(sm) {
 		 top: rem(120);
 	 }
+	 .btn-call{
+		 margin-bottom: rem(40);
+	 }
 	 .btn-main{
+		 display: block;
 		 width: rem(80);
 		 padding: rem(15);
 		 @include media-breakpoint-down(sm) {
