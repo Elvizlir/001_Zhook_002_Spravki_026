@@ -12,6 +12,7 @@
 		padding-bottom: rem(90);
 		@include media-breakpoint-down(sm) {
 			margin-bottom: rem(30) !important;
+			padding-top: rem(50) !important;
 		}
 	}
 	&__bg-photo{
