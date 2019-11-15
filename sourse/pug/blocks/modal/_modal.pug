@@ -43,4 +43,17 @@ mixin modal()
 			+b.BUTTON.btn-main(type="submit") Оформить заявку
 		+e.A.link.scroll-link(href="/#s-data") Перечень необходимых данных
 	// #modal-call
+
+	+b.modal-phone.zoom-anim-dialog.mfp-hide.modal-win#modal-phone
+		+e.title Связаться с нами
+		+e.btn.btn.btn-secondary(href='tel:+74951084392')
+			+e.btn-title Москва
+			+e.btn-number +7 (495) 108-43-92
+		+e.btn.btn.btn-secondary(href='tel:+74951084392')
+			+e.btn-title Санкт-Петербург:
+			+e.btn-number +7 (495) 108-43-92
+		+e.btn.btn.btn-secondary(href='tel:+74951084392')
+			+e.btn-title Новосибирск:
+			+e.btn-number +7 (495) 108-43-92
+	// #modal-phone
 	// modal

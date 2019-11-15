@@ -60,6 +60,32 @@ a {
 	position: relative;
 }
 
+.modal-phone{
+	text-align: center;
+	&__title{
+		color: $primary;
+		font-size: rem(26);
+		font-weight: 700;
+		text-align: center;
+		max-width: rem(250);
+		margin: 0 auto rem(10);
+	}
+	&__btn{
+		line-height: 1;
+		padding: rem(10);
+		width: 100%;
+		display: block;
+		&-title{
+			margin-bottom: rem(5);
+			font-size: rem(24);
+			display: block;
+		}
+		&:not(:last-child){
+			margin-bottom: rem(10);
+		}
+	}
+}
+
 #foot-dialog {
 	h3 {
 		font-size: em(36);
