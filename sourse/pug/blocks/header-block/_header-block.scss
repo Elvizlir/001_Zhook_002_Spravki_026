@@ -170,3 +170,37 @@
 		}
 	}
 }
+
+.bg-thanks{
+	background-color: $primary;
+	.header-block__main-text{
+		font-size: rem(16);
+		line-height: rem(26);
+		font-weight: 300;
+		color: #fff;
+		margin-bottom: rem(20);
+	}
+	.container{
+		min-height: rem(650);
+		@include media-breakpoint-down(lg) {
+			min-height: 0;
+		}
+	}
+	.header-block__block{
+		margin-left: rem(120);
+		@include media-breakpoint-down(lg) {
+			margin-left: 0;
+		}
+	}
+	.btn-main{
+		margin-top: rem(70);
+	}
+}
+
+.thanks-extra{
+	background-color: $primary;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

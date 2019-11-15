@@ -60,3 +60,19 @@ mixin header-block-contacts()
 						+e.P.main-text Самый быстрый способ связаться с&nbsp;нашим медицинским центром&nbsp;&mdash; это форма онлайн-заявки на&nbsp;нашем сайте. Этот вариант доступен круглосуточно, а&nbsp;отклик на&nbsp;обращение вы&nbsp;получите в&nbsp;течение рабочего дня. Мы&nbsp;ждем ваш звонок или заявку. Дайте нам знать, что вам нужна справка 026&nbsp;у, и&nbsp;вы&nbsp;останетесь довольны быстрым и&nbsp;профессиональным оформлением медицинского документа с&nbsp;гарантией качества.
 
 	// end header-block
+
+
+mixin header-block-thanks()
+	// start header-block
+	.bg-thanks
+		+b.header-block#header-block-thanks(style="background-image: url(img/header-bg.jpg);")
+			+e.container.container
+				+e.IMG.bg-photo.d-none.d-xl-block(src="img/header-bg-photo.png" alt="#")
+				.row
+					+e.main-col.col.d-flex.justify-content-center.align-items-center
+						+e.block
+							+e.H1.title Спасибо за вашу заявку!
+							+e.P.main-text Вы можете вернуться на главную страницу
+							+b.A.btn-main(href="/") Вернуться на главную страницу
+
+	// end header-block

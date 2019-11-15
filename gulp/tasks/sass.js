@@ -8,7 +8,7 @@ module.exports = function (){
 	.pipe($.gulpif(!$.envDev, $.gp.combineMq()))
 	.pipe($.gp.rename({suffix: '.min', prefix : ''}))
 	.pipe($.gp.autoprefixer(['last 5 versions']))
-	.pipe($.cleanCSS())
+	// .pipe($.cleanCSS())
 	.pipe($.gulp.dest('public/css'))
 	//.on('end', browserSync.stream());
 	.pipe($.browserSync.stream());

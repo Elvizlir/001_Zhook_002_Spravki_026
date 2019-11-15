@@ -22,6 +22,13 @@ $output-bourbon-deprecation-warnings: false;
 
 @import "base"; 
 @import '../pug/blocks/**/*.scss';
+/* 
+ * top-nav-fix
+ */
+ @import '../pug/blocks/top-nav/_top-nav.scss';
+ /* 
+  * top-nav-fix
+  */
 @import "media";// Всегда в конце
 
 
